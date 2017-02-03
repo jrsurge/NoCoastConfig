@@ -4,5 +4,5 @@ author: "James Surgenor",
 summary: "Graphical Configuration Tool for MakeNoise 0-Coast",
 version: "1.0.0",
 schelp: "NoCoastConfig",
-url: "http://jamessurgenormusic.com"
+url: "http://github.com/jrsurge/nocoastconfig"
 )
