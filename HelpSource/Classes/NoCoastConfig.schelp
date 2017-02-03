@@ -1,0 +1,224 @@
+TITLE:: NoCoastConfig
+summary:: Graphical Configuration Tool for the MakeNoise 0-Coast
+categories:: Graphical, Utility
+
+DESCRIPTION::
+The 0-Coast is a semi-modular desktop synth created by MakeNoise.
+
+WARNING:: This requires firmware v1.5.4 installed on the 0-Coast. ::
+
+NOTE:: You will need to connect to your 0-Coast using MIDI ::
+NOTE:: The 0-Coast resets everything on reboot ::
+
+Since v1.5.4, the 0-Coast has been configurable using MIDI CC messages.
+This avoids digging around in the PGM pages!
+
+This class is simply a wrapper around the MakeNoise specification, with
+a simple GUI to make things easy.
+
+
+CLASSMETHODS::
+
+METHOD:: new
+Create a new NoCoastConfig window
+
+returns:: NoCoastConfig instance (launches GUI)
+
+
+INSTANCEMETHODS::
+
+These are all 'private' and called by the GUI - you are not expected to use these yourself.
+They are documented here for information.
+
+METHOD:: makeWindow
+Makes the GUI, and brings it to the front (called during instantiation)
+
+METHOD:: setDevice
+Sets the MIDIOut device used to communicate with the 0-Coast
+
+ARGUMENT:: id
+The id of the MIDIEndPoint (index into MIDIClient.destinations). The GUI can handle this for you
+
+METHOD:: arpOn
+Turns the internal arpeggiator on
+
+METHOD:: arpOff
+Turns the internal arpeggiator off
+
+METHOD:: arpTrad
+Sets the internal arpeggiator to 'Traditional' mode
+
+METHOD:: arpLatch
+Sets the internal arpeggiator to 'Latch' mode
+
+METHOD:: legatoOn
+Sets legato mode on
+
+METHOD:: legatoOff
+Sets legato mode off
+
+METHOD:: midiCh1
+Sets the MIDI channel MIDI A listens on
+NOTE:: Channel numbers greater than 15 sets to listen on all MIDI channels ::
+
+ARGUMENT:: chan
+The MIDI channel number to listen on (0-127)
+
+
+METHOD:: midiCh2
+Sets the MIDI channel MIDI B listens on
+NOTE:: Channel numbers greater than 15 sets to listen on all MIDI channels ::
+
+ARGUMENT:: chan
+The MIDI channel number to listen on (0-127)
+
+
+METHOD:: midiChA_CV_Note
+Sets MIDI A CV to listen to note
+
+METHOD:: midiChA_CV_Vel
+Sets MIDI A CV to listen to velocity
+
+
+METHOD:: midiChA_CV_Mod
+Sets MIDI A CV to listen to the mod wheel
+
+METHOD:: midiChA_CV_LFO
+Sets MIDI A CV to listen to internal LFO
+
+
+METHOD:: midiChB_CV_Mod
+Sets MIDI B CV to listen to the mod wheel
+
+
+METHOD:: midiChA_Gate_Mod
+Sets MIDI A Gate to listn to the mod wheel (> 50&)
+
+METHOD:: midiChB_Gate_Mod
+Sets the Midi B Gate to listen to the mod wheel (> 50%)
+
+METHOD:: midiClkOff
+Sets whether to listen to the incoming MIDI Clock (see 0-Coast documentation)
+
+METHOD:: midiChA_Gate_Note
+Sets MID A Gate to listen to noteon
+
+METHOD:: midiChB_Gate_Note
+Sets MIDI B Gate to listen to noteon
+
+METHOD:: midiChA_PitchBendScale
+Sets the PitchBendScale for MIDI A (see 0-coast documentation)
+
+ARGUMENT:: val
+The scale for PitchBend (0-127)
+
+METHOD:: midiChB_CV_LFO
+Sets MIDI B CV to listen to the internal LFO
+
+
+
+METHOD:: midiChB_CV_Note
+Sets MIDI B CV to listen to note
+
+
+
+METHOD:: midiChA_Gate_Vel
+Sets MIDI A Gate to listen to velocity (> 50%)
+
+
+
+METHOD:: midiChB_AfterScale
+Sets the AfterTouchScale for MIDI B (see 0-Coast documentation)
+
+ARGUMENT:: val
+The scale for AfterTouch
+
+
+
+
+
+
+
+
+METHOD:: midiChB_CV_Vel
+Sets MIDI B CV to listen to velocity
+
+
+
+METHOD:: midiChA_VelScale
+Sets the minimum velocity for MIDI A
+
+ARGUMENT:: val
+The minimum velocity (0-127)
+
+
+
+METHOD:: midiChA_AfterScale
+Sets the AfterTouchScale for MIDI A (see 0-Coast documentation)
+
+ARGUMENT:: val
+The scale for AfterTouch
+
+
+METHOD:: midiChB_VelScale
+Sets the minimum velocity for MIDI B
+
+ARGUMENT:: val
+The minimum velocity (0-127)
+
+
+
+
+
+
+METHOD:: midiChA_Gate_LFO
+(describe method here)
+
+
+
+METHOD:: tempoInDiv
+(describe method here)
+
+ARGUMENT:: val
+(describe argument here)
+
+
+
+METHOD:: midiClkOn
+(describe method here)
+
+
+
+METHOD:: init
+(describe method here)
+
+
+
+
+
+
+
+METHOD:: midiChB_Gate_Vel
+(describe method here)
+
+
+
+METHOD:: midiChB_PitchBendScale
+(describe method here)
+
+ARGUMENT:: val
+(describe argument here)
+
+
+
+METHOD:: midiChB_Gate_LFO
+(describe method here)
+
+
+EXAMPLES::
+
+code::
+// This will automatically load the configuration window
+// Once loaded, make sure to select the MIDI output the 0-Coast is connected to
+NoCoastConfig();
+::
