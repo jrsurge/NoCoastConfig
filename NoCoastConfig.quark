@@ -1,5 +1,5 @@
 (
-name: "NoCoastConfig",
+name: "0-Coast Config",
 author: "James Surgenor",
 summary: "Graphical Configuration Tool for MakeNoise 0-Coast",
 version: "1.0.0",
