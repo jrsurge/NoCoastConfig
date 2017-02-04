@@ -30,6 +30,8 @@ INSTANCEMETHODS::
 These are all 'private' and called by the GUI - you are not expected to use these yourself.
 They are documented here for information.
 
+PRIVATE:: init
+
 METHOD:: makeWindow
 Makes the GUI, and brings it to the front (called during instantiation)
 
@@ -87,24 +89,46 @@ METHOD:: midiChA_CV_LFO
 Sets MIDI A CV to listen to internal LFO
 
 
+
+METHOD:: midiChB_CV_Note
+Sets MIDI B CV to listen to note
+
+METHOD:: midiChB_CV_Vel
+Sets MIDI B CV to listen to velocity
+
 METHOD:: midiChB_CV_Mod
 Sets MIDI B CV to listen to the mod wheel
 
+METHOD:: midiChB_CV_LFO
+Sets MIDI B CV to listen to the internal LFO
 
-METHOD:: midiChA_Gate_Mod
-Sets MIDI A Gate to listn to the mod wheel (> 50&)
 
-METHOD:: midiChB_Gate_Mod
-Sets the Midi B Gate to listen to the mod wheel (> 50%)
-
-METHOD:: midiClkOff
-Sets whether to listen to the incoming MIDI Clock (see 0-Coast documentation)
 
 METHOD:: midiChA_Gate_Note
 Sets MID A Gate to listen to noteon
 
+METHOD:: midiChA_Gate_Vel
+Sets MIDI A Gate to listen to velocity (> 50%)
+
+METHOD:: midiChA_Gate_Mod
+Sets MIDI A Gate to listn to the mod wheel (> 50&)
+
+METHOD:: midiChA_Gate_LFO
+Sets MIDI A Gate to listen to internal LFO
+
+
 METHOD:: midiChB_Gate_Note
 Sets MIDI B Gate to listen to noteon
+
+METHOD:: midiChB_Gate_Vel
+Sets MIDI B Gate to listen to velocity (> 50%)
+
+METHOD:: midiChB_Gate_Mod
+Sets the Midi B Gate to listen to the mod wheel (> 50%)
+
+METHOD:: midiChB_Gate_LFO
+Sets MIDI B Gate to listen to internal LFO
+
 
 METHOD:: midiChA_PitchBendScale
 Sets the PitchBendScale for MIDI A (see 0-coast documentation)
@@ -112,19 +136,18 @@ Sets the PitchBendScale for MIDI A (see 0-coast documentation)
 ARGUMENT:: val
 The scale for PitchBend (0-127)
 
-METHOD:: midiChB_CV_LFO
-Sets MIDI B CV to listen to the internal LFO
 
+METHOD:: midiChB_PitchBendScale
+Sets the PitchBendScale for MIDI B (see 0-Coast documentation)
 
+ARGUMENT:: val
+The scale of PitchBend
 
-METHOD:: midiChB_CV_Note
-Sets MIDI B CV to listen to note
+METHOD:: midiChA_AfterScale
+Sets the AfterTouchScale for MIDI A (see 0-Coast documentation)
 
-
-
-METHOD:: midiChA_Gate_Vel
-Sets MIDI A Gate to listen to velocity (> 50%)
-
+ARGUMENT:: val
+The scale for AfterTouch
 
 
 METHOD:: midiChB_AfterScale
@@ -134,30 +157,11 @@ ARGUMENT:: val
 The scale for AfterTouch
 
 
-
-
-
-
-
-
-METHOD:: midiChB_CV_Vel
-Sets MIDI B CV to listen to velocity
-
-
-
 METHOD:: midiChA_VelScale
 Sets the minimum velocity for MIDI A
 
 ARGUMENT:: val
 The minimum velocity (0-127)
-
-
-
-METHOD:: midiChA_AfterScale
-Sets the AfterTouchScale for MIDI A (see 0-Coast documentation)
-
-ARGUMENT:: val
-The scale for AfterTouch
 
 
 METHOD:: midiChB_VelScale
@@ -167,52 +171,18 @@ ARGUMENT:: val
 The minimum velocity (0-127)
 
 
+METHOD:: midiClkOn
+Sets to listen to incoming MIDI Clock
 
-
-
-
-METHOD:: midiChA_Gate_LFO
-(describe method here)
-
+METHOD:: midiClkOff
+Sets whether to listen to the incoming MIDI Clock (see 0-Coast documentation)
 
 
 METHOD:: tempoInDiv
-(describe method here)
+Sets MIDI Tempo In division (see 0-Coast documentation)
 
 ARGUMENT:: val
-(describe argument here)
-
-
-
-METHOD:: midiClkOn
-(describe method here)
-
-
-
-METHOD:: init
-(describe method here)
-
-
-
-
-
-
-
-METHOD:: midiChB_Gate_Vel
-(describe method here)
-
-
-
-METHOD:: midiChB_PitchBendScale
-(describe method here)
-
-ARGUMENT:: val
-(describe argument here)
-
-
-
-METHOD:: midiChB_Gate_LFO
-(describe method here)
+Tempo division (0-127)
 
 
 EXAMPLES::
